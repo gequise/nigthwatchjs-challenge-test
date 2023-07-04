@@ -1,0 +1,16 @@
+{
+  "name": "nightwatchjs-test-challenge",
+  "version": "1.0.0",
+  "description": "nightwatchjs framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx nightwatch ./test/"
+  },
+  "author": "gequise",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^114.0.2",
+    "geckodriver": "^4.0.4",
+    "nightwatch": "^3.0.1"
+  }
+}
