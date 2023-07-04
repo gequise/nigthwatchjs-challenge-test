@@ -46,16 +46,20 @@ module.exports = {
       selector: "#wpforms-submit-872",
     },
     nameFieldInput: {
-      selector: "#wpforms-872-field_1",
+      selector: '//input[@id="wpforms-872-field_0"]',
+      locateStrategy: "xpath",
     },
     emailFieldInput: {
-      selector: "#wpforms-872-field_0",
+      selector: '//input[@id="wpforms-872-field_1"]',
+      locateStrategy: "xpath",
     },
     companyFieldInput: {
-      selector: "#wpforms-872-field_6",
+      selector: '//input[@id="wpforms-872-field_6"]',
+      locateStrategy: "xpath",
     },
     messageFieldInput: {
-      selector: "#wpforms-872-field_2",
+      selector: '//textarea[@id="wpforms-872-field_2"]',
+      locateStrategy: "xpath",
     },
   },
 };

@@ -31,5 +31,25 @@ describe("December labs - page objects", function () {
       .element("@messageFieldInput")
       .to.have.css("border-color")
       .which.equals("rgb(255, 0, 0)");
+    decemberLabsHomePage.setValue("@nameFieldInput", "John Doe");
+    decemberLabsHomePage.expect
+      .element("@nameFieldInput")
+      .to.have.css("border-color")
+      .which.not.equals("rgb(255, 0, 0)");
+    decemberLabsHomePage.setValue("@emailFieldInput", "John@test.com");
+    decemberLabsHomePage.expect
+      .element("@emailFieldInput")
+      .to.have.css("border-color")
+      .which.not.equals("rgb(255, 0, 0)");
+    decemberLabsHomePage.setValue("@companyFieldInput", "Company Team");
+    decemberLabsHomePage.expect
+      .element("@companyFieldInput")
+      .to.have.css("border-color")
+      .which.not.equals("rgb(255, 0, 0)");
+    decemberLabsHomePage.setValue("@messageFieldInput", "Message Text");
+    decemberLabsHomePage.expect
+      .element("@messageFieldInput")
+      .to.have.css("border-color")
+      .which.not.equals("rgb(255, 0, 0)");
   });
 });
