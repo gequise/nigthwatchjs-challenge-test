@@ -1,53 +1,63 @@
-// test.js
 describe("December labs - page objects", function () {
   const decemberLabsHomePage = browser.page.decemberLabs.decemberLabsHomePage();
 
   before(async () => {
-    decemberLabsHomePage.navigate().maximizeWindow();
+    await decemberLabsHomePage.navigate().maximizeWindow();
   });
 
-  after(async (browser) => browser.quit());
+  after(async () => {
+    await browser.quit();
+  });
 
-  it('should navigate to December Labs and click "Get in touch"', function () {
-    decemberLabsHomePage.getInTouchBtn();
-    decemberLabsHomePage.expect.element("@getInTouchModal").to.be.visible;
-    decemberLabsHomePage.expect
+  it('should navigate to December Labs and click "Get in touch"', async function () {
+    await decemberLabsHomePage.getInTouchBtn();
+    await decemberLabsHomePage.expect.element("@getInTouchModal").to.be.visible;
+    await decemberLabsHomePage.expect
       .element("@getInTouchModalTxt")
       .text.to.equal("Get In Touch");
-    decemberLabsHomePage.getInTouchSendBtn();
-    decemberLabsHomePage.expect
+  });
+
+  it("should validate required fields marked in red", async function () {
+    await decemberLabsHomePage.getInTouchSendBtn();
+    await decemberLabsHomePage.expect
       .element("@nameFieldInput")
       .to.have.css("border-color")
       .which.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.expect
+    await decemberLabsHomePage.expect
       .element("@emailFieldInput")
       .to.have.css("border-color")
       .which.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.expect
+    await decemberLabsHomePage.expect
       .element("@companyFieldInput")
       .to.have.css("border-color")
       .which.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.expect
+    await decemberLabsHomePage.expect
       .element("@messageFieldInput")
       .to.have.css("border-color")
       .which.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.setValue("@nameFieldInput", "John Doe");
-    decemberLabsHomePage.expect
+  });
+
+  it("should fill in required fields and validate they are no longer marked in red", async function () {
+    await decemberLabsHomePage.setValue("@nameFieldInput", "John Doe");
+    await decemberLabsHomePage.expect
       .element("@nameFieldInput")
       .to.have.css("border-color")
       .which.not.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.setValue("@emailFieldInput", "John@test.com");
-    decemberLabsHomePage.expect
+
+    await decemberLabsHomePage.setValue("@emailFieldInput", "John@test.com");
+    await decemberLabsHomePage.expect
       .element("@emailFieldInput")
       .to.have.css("border-color")
       .which.not.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.setValue("@companyFieldInput", "Company Team");
-    decemberLabsHomePage.expect
+
+    await decemberLabsHomePage.setValue("@companyFieldInput", "Company Team");
+    await decemberLabsHomePage.expect
       .element("@companyFieldInput")
       .to.have.css("border-color")
       .which.not.equals("rgb(255, 0, 0)");
-    decemberLabsHomePage.setValue("@messageFieldInput", "Message Text");
-    decemberLabsHomePage.expect
+
+    await decemberLabsHomePage.setValue("@messageFieldInput", "Message Text");
+    await decemberLabsHomePage.expect
       .element("@messageFieldInput")
       .to.have.css("border-color")
       .which.not.equals("rgb(255, 0, 0)");
