@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="test.december-labs"
+    errors="0" failures="0" hostname="" id="" package="december-labs" skipped="0"
+    tests="3" time="22.64" timestamp="">
+  
+    <testcase name="should navigate to December Labs and click &#34;Get in touch&#34;" classname="test.december-labs" time="1.679" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="should validate required fields marked in red" classname="test.december-labs" time="1.222" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="should fill in required fields and validate they are no longer marked in red" classname="test.december-labs" time="4.554" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
