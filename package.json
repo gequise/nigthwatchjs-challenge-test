@@ -4,7 +4,7 @@
   "description": "nightwatchjs framework",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch --env chrome"
+    "test": "npx nightwatch test"
   },
   "author": "gequise",
   "license": "ISC",
